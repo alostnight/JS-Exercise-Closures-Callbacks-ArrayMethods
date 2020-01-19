@@ -144,7 +144,7 @@ function processProduct(num1, num2, callback) {
 */
 function processContains(item, list, callback) {
 
-  callback(list.includes(item))
+  return callback(list.includes(item));
 
 }
 
@@ -266,15 +266,12 @@ function tallyUpDonations(runners) {
  * etc
 */
 function counterMaker() {
-  
-  function counter() {
-    let counter = 0;
+    let count = 0;
     return function(){
-    return ++ counter;
+    return count++;
     }
     };
-  return counter;
-  }
+
 
 /**
  * ### Challenge `counterMakerWithLimit`
